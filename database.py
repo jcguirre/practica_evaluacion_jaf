@@ -1,37 +1,10 @@
-from azure.cosmos import CosmosClient, exceptions, PartitionKey
+from azure.cosmos import CosmosClient,container
+
+
 
 Cosmos_endpoint = 'https://dbjafdev.documents.azure.com:443/'
 cosmos_key = 'chFx77YDSmgHgVtHlo4C9gtk1U7nfwHu6sZne5uMNUd6wIayaLTAxD4i3ZtxIdFB3mEp0ciBY2uPACDbzWyHkw=='
 DATABASE_NAME = 'Evaluacion_DV'
-Container_Name_1 = 'Usuarios'
-Container_Name_2 = 'Proyectos'
-
-#inicializar el cliente de Cosmos DB
-client= CosmosClient(Cosmos_endpoint, cosmos_key)
-
-
-#Crear o obtener la base de datos
-try:
-    database = client.create_database_if_not_exists(id=DATABASE_NAME)
-except exceptions.CosmosResourceExistsError:
-    database = client.get_database_client(DATABASE_NAME)
-
-
-#Contenedores
-try:
-    container = database.create_container_if_not_exists(
-        id=Container_Name_1,
-        partition_key={'paths': ['/id'], 'kind': 'Hash'},
-        offer_throughput=400
-    )
-except exceptions.CosmosResourceExistsError:
-    container = database.get_container_client(Container_Name_1)
-
-try:
-    container = database.create_container_if_not_exists(
-        id=Container_Name_2,
-        partition_key={'paths': ['/id'], 'kind': 'Hash'},
-        offer_throughput=400
-    )
-except exceptions.CosmosResourceExistsError:
-    container = database.get_container_client(CONTAINER_NAME_2)
+client = CosmosClient(Cosmos_endpoint, cosmos_key)
+Container_Usuarios = client.get_database_client(DATABASE_NAME).get_container_client("Usuarios")
+Container_Proyectos = client.get_database_client(DATABASE_NAME).get_container_client("Proyectos")

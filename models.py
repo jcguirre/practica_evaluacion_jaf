@@ -2,7 +2,7 @@ from pydantic import BaseModel, Field, EmailStr
 from typing import List, Optional
  
 class Usuarios(BaseModel):
-    id: str = Field(..., example='p1')
+    id: str = Field(..., example='u1')
     nombre: str= Field(..., example='joel')
     email: EmailStr = Field(..., example='joel@example.com')
     edad: int = Field(..., example=30)
