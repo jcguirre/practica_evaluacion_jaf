@@ -1,7 +1,7 @@
 from azure.cosmos import CosmosClient, exceptions, PartitionKey
 
 Cosmos_endpoint = 'https://dbjafdev.documents.azure.com:443/'
-cosmos_key = ''
+cosmos_key = 'chFx77YDSmgHgVtHlo4C9gtk1U7nfwHu6sZne5uMNUd6wIayaLTAxD4i3ZtxIdFB3mEp0ciBY2uPACDbzWyHkw=='
 DATABASE_NAME = 'Evaluacion_DV'
 Container_Name_1 = 'Usuarios'
 Container_Name_2 = 'Proyectos'
@@ -17,7 +17,7 @@ except exceptions.CosmosResourceExistsError:
     database = client.get_database_client(DATABASE_NAME)
 
 
-#Crear o obtener el contenedor
+#contenedor
 try:
     container = database.create_container_if_not_exists(
         id=Container_Name_1,
