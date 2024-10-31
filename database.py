@@ -1,6 +1,6 @@
 from azure.cosmos import CosmosClient, exceptions, PartitionKey
 
-Cosmos_endpoint = ''
+Cosmos_endpoint = 'https://dbjafdev.documents.azure.com:443/'
 cosmos_key = ''
 DATABASE_NAME = 'Evaluacion_DV'
 Container_Name_1 = 'Usuarios'
