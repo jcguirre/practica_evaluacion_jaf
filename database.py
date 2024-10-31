@@ -17,7 +17,7 @@ except exceptions.CosmosResourceExistsError:
     database = client.get_database_client(DATABASE_NAME)
 
 
-#contenedor
+#Contenedores
 try:
     container = database.create_container_if_not_exists(
         id=Container_Name_1,

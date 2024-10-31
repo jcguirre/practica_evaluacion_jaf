@@ -6,7 +6,7 @@ from azure.cosmos import exceptions
 from datetime import datetime
 
 
-app = FastAPI(tittle='Api de Gestion de Proyecto')
+app = FastAPI(tittle='Api de Gestion de Proyectos')
 
 #### Endpoint de Eventos
 
