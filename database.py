@@ -1,5 +1,10 @@
 from azure.cosmos import CosmosClient, exceptions, PartitionKey
 
+
+DATABASE_NAME = 'Evaluacion_DV'
+Container_Name_1 = 'Usuarios'
+Container_Name_2 = 'Proyectos'
+
 #inicializar el cliente de Cosmos DB
 client= CosmosClient(Cosmos_endpoint, cosmos_key)
 
