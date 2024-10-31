@@ -1,7 +1,7 @@
 from azure.cosmos import CosmosClient, exceptions, PartitionKey
 
-Cosmos_endpoint =''
-cosmos_key =''
+Cosmos_endpoint = ''
+cosmos_key = ''
 DATABASE_NAME = 'Evaluacion_DV'
 Container_Name_1 = 'Usuarios'
 Container_Name_2 = 'Proyectos'
