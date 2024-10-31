@@ -1,3 +1,5 @@
+from azure.cosmos import CosmosClient, exceptions, PartitionKey
+
 #inicializar el cliente de Cosmos DB
 client= CosmosClient(Cosmos_endpoint, cosmos_key)
 
