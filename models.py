@@ -11,6 +11,6 @@ class Usuarios(BaseModel):
 class Proyectos(BaseModel):
     id: str = Field(..., example='e1')
     nombre: str = Field(..., example='Proyecto 1')
-    Descripcion: Optional[str] = Field(None, example='Proyectos de tecnologia')
+    Descripcion: Optional[str] = Field(None, example='Proyecto de tecnologia')
     Id_usuario: List[Usuarios] = Field(default_factory=list)
     Fecha_Creacion: str = Field(..., example='2024-10-30T20:00:00Z')
